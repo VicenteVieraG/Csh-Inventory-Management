@@ -1,0 +1,74 @@
+# C# / .NET (Console)
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Bb]ld/
+[Rr]elease/
+[Dd]ebug/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+artifacts/
+publish/
+
+# Test results / coverage
+[Tt]est[Rr]esult*/
+TestResults/
+*.coverage
+*.coveragexml
+coverage*/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.rsuser
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/*
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/*
+!packages/build/
+!packages/repositories.config
+
+# Intermediate files
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.tlog
+*.tmp
+*.log
+*.dmp
+*.svclog
+*_wpftmp.csproj
+
+# .NET specific
+project.lock.json
+project.fragment.lock.json
+*.deps.json
+*.runtimeconfig.json
+*.dbmdl
+*.jfm
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+mono_crash.*
+
+# OS-specific
+.DS_Store
+Thumbs.db
