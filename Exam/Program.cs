@@ -20,7 +20,7 @@ internal class Inventory
         Console.WriteLine("[8]: Exit");
     }
     internal void AddStock(string name, float price) =>
-        Stocks.Add(idTrack++, new Stock() {Id = idTrack, Name = name, Price = price, Products = []});
+        Stocks.Add(idTrack++, new Stock() { Id = idTrack, Name = name, Price = price, Products = [] });
     internal bool RemoveStock(uint id) => Stocks.Remove(id);
     internal string Restock(uint id) => Stocks[id].AddProduct();
     internal void SellProduct(uint stockId, uint productId) => Stocks[stockId].RemoveProduct(productId);
@@ -57,7 +57,7 @@ internal class Inventory
                             Console.WriteLine("---------Set a Stock Name---------");
 
                             string? stockName = Console.ReadLine();
-                            while (stockName == "" || stockName == null)
+                            while (string.IsNullOrEmpty(stockName))
                             {
                                 Console.WriteLine("=====Write a Non-Empty Name for the Stock=====");
                                 stockName = Console.ReadLine();
@@ -65,7 +65,7 @@ internal class Inventory
 
                             Console.WriteLine("---------Set a Stock Price---------");
                             string? stockPrice = Console.ReadLine();
-                            while (stockPrice == "" || stockPrice == null || !float.TryParse(stockPrice, out float _) || float.IsNegative(float.Parse(stockPrice)))
+                            while (string.IsNullOrEmpty(stockPrice) || !float.TryParse(stockPrice, out float _) || float.IsNegative(float.Parse(stockPrice)))
                             {
                                 Console.WriteLine("=====Write a Valid Non-Empty Price for the Stock's Products=====");
                                 stockPrice = Console.ReadLine();
@@ -83,7 +83,7 @@ internal class Inventory
                             inventory.ListStocks();
 
                             string? id = Console.ReadLine();
-                            while (id == null || id == "" || !uint.TryParse(id, out uint _))
+                            while (string.IsNullOrEmpty(id) || !uint.TryParse(id, out uint _))
                             {
                                 Console.Clear();
                                 Console.WriteLine("======Enter a Valid Id======");
@@ -106,7 +106,7 @@ internal class Inventory
                             inventory.ListStocks();
 
                             string? id = Console.ReadLine();
-                            while (id == null || id == "" || !uint.TryParse(id, out uint _))
+                            while (string.IsNullOrEmpty(id) || !uint.TryParse(id, out uint _))
                             {
                                 Console.Clear();
                                 Console.WriteLine("======Enter a Valid Id======");
@@ -127,7 +127,7 @@ internal class Inventory
                             inventory.ListStocks();
 
                             string? idInput = Console.ReadLine();
-                            while (idInput == null || idInput == "" || !uint.TryParse(idInput, out uint _))
+                            while (string.IsNullOrEmpty(idInput) || !uint.TryParse(idInput, out uint _))
                             {
                                 Console.Clear();
                                 Console.WriteLine("======Enter a Valid Id======");
@@ -140,7 +140,7 @@ internal class Inventory
                             inventory.Stocks[stockId].ListProducts();
 
                             string? UIdInput = Console.ReadLine();
-                            while (UIdInput == null || UIdInput == "" || !uint.TryParse(UIdInput, out uint _))
+                            while (string.IsNullOrEmpty(UIdInput) || !uint.TryParse(UIdInput, out uint _))
                             {
                                 Console.Clear();
                                 Console.WriteLine("======Enter a Valid UnitId======");
